@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
+  resources :tenants do
+    resources :projects
+  end
   root 'welcome#index'
-
-  devise_for :users
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  resources :members
+  devise_for :users, controllers: { registrations: "registrations" }
 end

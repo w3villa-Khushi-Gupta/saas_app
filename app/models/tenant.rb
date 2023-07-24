@@ -1,13 +1,24 @@
 class Tenant < ApplicationRecord
-    acts_as_universal_and_determines_tenant
+    # acts_as_universal_and_determines_tenant
+    has_many :user_tenants
+    has_many :users, through: :user_tenants
     has_many :members, dependent: :destroy
+    has_many :projects, dependent: :destroy
+    validates_uniqueness_of :name
+    validates_presence_of :name
 
+    def can_create_projects?
+        (plan == 'free' && projects.count < 1) || (plan == 'premium')
+    end
 
     def self.create_new_tenant(tenant_params, user_params)
-
-        tenant = Tenant.new(:name => tenant_params[:name])
-        tenant.save    # create the tenant
-        return tenant
+        tenant = Tenant.new(tenant_params)
+        if @tenant.save
+            redirect_to tenant_path(@tenant), notice: "Tenant was successfully created."
+        else
+            # Handle validation errors or other issues
+            render :new
+        end
     end
   
     def self.new_signups_not_permitted?(params)

@@ -1,5 +1,6 @@
 <% if current_user %>
-  <h3>Welcome: <%= current_user.email %></h3>
+  <h3 class= 'pull-right'>Welcome: <%= @tenant.name %></h3>
+  <%= render 'projects/list' %>
 <% else %>
   <div class="jumbotron">
     <h2>Welcome to the Photo Management App!</h2>
@@ -11,8 +12,9 @@
   <div class="row">
     <div class="plans clearfix">
       <div class="col-lg-3 col-lg-offset-3 plan">
-        <h2>PREMIUM PLAN</h2>
-        <h4>Price: $10</h4>
+        <h2>Free Plan</h2>
+        <h4>Price: Free</h4>
+
         <div class="features">
           <ul>
             <li>Unlimited Image Uploads</li>
@@ -25,8 +27,9 @@
         </p>
       </div>
       <div class="col-lg-3 plan">
-        <h2>FREE PLAN</h2>
-        <h4>Price: Free</h4>
+        <h2>Premium Plan</h2>
+        <h4>Price: $10</h4>
+
         <div class="features">
           <ul>
             <li>Unlimited Image Uploads</li>

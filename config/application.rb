@@ -10,6 +10,8 @@ module SaasAppNew
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
+    config.action_mailer.default_url_options = { host: 'localhost:3000' }
+    config.assets.enabled = true
 
     # Configuration for the application, engines, and railties goes here.
     #

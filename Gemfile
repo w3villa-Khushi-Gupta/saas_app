@@ -46,16 +46,21 @@ gem "bootsnap", require: false
 #for the project purposes
 
 gem 'devise'
-
+gem 'jquery-rails'
 gem 'devise-bootstrap-views'
 gem 'twitter-bootstrap-rails'
 gem 'mini_racer', platforms: :ruby
+
+
 
 gem 'rails-ujs'
 gem 'sassc'
 
 gem 'eventmachine'
 gem 'stripe'
+
+gem 'pry', '~> 0.13.1'
+
 
 # Use Sass to process CSS
 # gem "sassc-rails"

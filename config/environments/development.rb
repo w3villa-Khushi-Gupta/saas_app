@@ -9,7 +9,7 @@ Rails.application.configure do
 
 
 
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   # set up for email sending even in dev mode
   # Don't care if the mailer can't send
@@ -30,7 +30,7 @@ Rails.application.configure do
 
 
 
-  
+
   config.cache_classes = false
 
   # Do not eager load code on boot.

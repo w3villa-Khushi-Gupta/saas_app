@@ -1,7 +1,7 @@
 class Member < ApplicationRecord
 
     belongs_to :user
-    acts_as_tenant
+    # acts_as_tenant
 
   DEFAULT_ADMIN = {
     first_name: "Admin",
