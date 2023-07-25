@@ -13,7 +13,7 @@ class MembersController < ApplicationController
       @member.user_id = @user.id
       @member.tenant_id = current_tenant.id
 
-      binding.pry
+      # binding.pry
 
       # ok to create user, member
       if @user.save_and_invite_member() && @member.save

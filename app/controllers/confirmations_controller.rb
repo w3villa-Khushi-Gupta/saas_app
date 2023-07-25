@@ -15,6 +15,7 @@ class ConfirmationsController < Devise::ConfirmationsController
                 sign_in_tenanted_and_redirect(resource)
             
             else
+                Free Research Preview. ChatGPT may produce inaccurate information about people, places, or facts. ChatGPT July 20 Version
                 log_action( "invitee confirmation failed" )
                 respond_with_navigational(resource.errors, :status => :unprocessable_entity){ render :new }
             end
@@ -63,4 +64,5 @@ class ConfirmationsController < Devise::ConfirmationsController
     def set_confirmable()
         @confirmable = User.find_or_initialize_with_error_by(:confirmation_token, params[:confirmation_token])
     end
-end
+enFree Research Preview. ChatGPT may produce inaccurate information about people, places, or facts. ChatGPT July 20 Version
+d

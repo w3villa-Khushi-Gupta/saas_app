@@ -52,6 +52,8 @@ gem 'twitter-bootstrap-rails'
 gem 'mini_racer', platforms: :ruby
 
 
+gem 'aws-sdk'
+
 
 gem 'rails-ujs'
 gem 'sassc'
