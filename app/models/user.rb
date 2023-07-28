@@ -5,10 +5,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
         has_many :user_tenants
+        has_many :tenants, through: :members
         has_many :tenants, through: :user_tenants      
         has_one :payment
         accepts_nested_attributes_for :payment
-
   def is_admin?
     is_admin
   end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_24_093405) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_26_053801) do
   create_table "artifacts", force: :cascade do |t|
     t.string "name"
     t.string "key"
@@ -34,9 +34,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_24_093405) do
   create_table "payments", force: :cascade do |t|
     t.string "email"
     t.string "token"
-    t.integer "user_id"
+    t.integer "tenant_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["tenant_id"], name: "index_payments_on_tenant_id"
   end
 
   create_table "projects", force: :cascade do |t|
@@ -98,6 +99,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_24_093405) do
   end
 
   add_foreign_key "artifacts", "projects"
+  add_foreign_key "payments", "tenants"
   add_foreign_key "projects", "tenants"
   add_foreign_key "user_tenants", "tenants"
   add_foreign_key "user_tenants", "users"

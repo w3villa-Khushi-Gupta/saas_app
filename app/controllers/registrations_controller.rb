@@ -2,7 +2,6 @@
 class RegistrationsController < Devise::RegistrationsController
     def create
       build_resource(sign_up_params)
-  
       # Save the User object first
       resource.save
       # If the user was saved successfully, create the associated Tenant and save it

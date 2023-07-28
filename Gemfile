@@ -64,6 +64,8 @@ gem 'stripe'
 gem 'pry', '~> 0.13.1'
 
 
+gem 'stripe'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 

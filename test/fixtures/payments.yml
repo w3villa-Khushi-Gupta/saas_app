@@ -3,9 +3,9 @@
 one:
   email: MyString
   token: MyString
-  user_id: 1
+  tenant_id: one
 
 two:
   email: MyString
   token: MyString
-  user_id: 1
+  tenant_id: two
