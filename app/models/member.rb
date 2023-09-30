@@ -6,6 +6,9 @@ class Member < ApplicationRecord
     validates :first_name, presence: true
     validates :last_name, presence: true
     
+
+  
+
     # DEFAULT_ADMIN = {
   #   first_name: "Admin",
   #   last_name:  "Please edit me"

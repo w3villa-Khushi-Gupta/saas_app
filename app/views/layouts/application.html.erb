@@ -28,24 +28,22 @@
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class='nav navbar-nav'>
             <%if current_user%>
-              <li><%= link_to '<i class="fa fa-user"></i> Add Members'.html_safe, new_member_path, class: 'btn btn-sm btn-primary' %></li>
+              <li><%= link_to ' 👥 Add Members'.html_safe, new_member_path, class: 'btn btn-sm btn-primary add_member' %></li>
             <%end%>
           </ul>
-          <ul>
+          <div class= "d-flex">
             <% if current_user %>
-              <li class="col-md-8 user-name">
-              <%= link_to ('<i class="fa fa-user"></i> ' + truncate(current_user.email, length: 25)).html_safe,
-                        edit_user_registration_path, title: 'Edit Profile' %>
-              </li>
-              <li class="col-md-1"> </li>
-              <li class="col-md-3 logout"><%= button_to "Logout", destroy_user_session_path	, class: "btn btn-sm btn-danger" %></li>
+              <%# <div class="  text-primary"> %>
+              <%= link_to ('👤' + truncate(current_user.email, length: 25)).html_safe,
+                          edit_user_registration_path, title: 'Edit Profile', class: 'user-name pull-right ' %>
+              <%# </div> %>
+              <div class="logout pull-right my-2"><%= button_to "Logout", destroy_user_session_path	, class: "btn btn-sm btn-danger" %></div>
             <% else %>
-              <li class="col-md-4 pull-right">
+              <div class=" pull-right sign_in">
                 <%= link_to 'Sign In', new_user_session_path, class: "btn btn-sm btn-primary" %>
-              </li>
+              </div>
             <% end %>
-
-          </ul>
+          </div>
         </div>
       </div>
     </div>
